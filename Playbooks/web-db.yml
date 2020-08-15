@@ -1,0 +1,22 @@
+---
+- hosts: webservers
+  remote_user: cloud_user
+  become: yes
+  tasks:
+  - name: ensure_apache_latest
+    yum: 
+      name: httpd
+      state: latest
+  - name: apply_apache_config
+    template: src=/srv/httpd.j2 dest=/etc/httpd.conf
+
+- hosts: databases
+  remote_user: cloud_user
+  become: yes
+  tasks: 
+  - name: ensure_postgresql_latest
+    yum: 
+      name: postgresql
+      state: latest
+  - name: ensure_postgresql_service
+    service: name=postgresql state=started
