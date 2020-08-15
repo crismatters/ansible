@@ -1,6 +1,5 @@
 ---
 - hosts: webservers
-  remote_user: cloud_user
   become: yes
   tasks:
   - name: ensure_apache_latest

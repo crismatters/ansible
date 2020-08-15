@@ -10,7 +10,7 @@
       service:
         name: httpd
         state: started
-        enable: yes
+        enabled: yes
     - name: create_index.html
       file:
         path: /var/www/html/index.html
