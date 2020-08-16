@@ -1,7 +1,7 @@
 #!/bin/bash
 echo -n {\"group\":{
 echo -n \"hosts\":[
-ARRAY=("cristobalsilva2c.mylabserver.com" "cristobalsilva3c.mylabserver.com" "cristobalsilva4c.mylabserver.com" "127.0.0.1")
+ARRAY=("cristobalsilva2c.mylabserver.com" "cristobalsilva3c.mylabserver.com" "cristobalsilva4c.mylabserver.com")
 
 for i in ${ARRAY[@]}
 do
