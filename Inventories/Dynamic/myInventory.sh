@@ -16,4 +16,4 @@ do
   fi
 done
 echo -n ],\"vars\":{}},
-echo -n \"meta\":{\"hostvars\":{}}}
+echo -n \"_meta\":{\"hostvars\":{}}}
