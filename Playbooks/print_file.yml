@@ -1,0 +1,9 @@
+- hosts: databases
+  remote_user: cloud_user
+  tasks:
+  - name: Print message
+    become: yes
+    become_user: root
+    copy:
+      dest: "/home/cloud_user/file.txt"
+      content: "{{ hostvars['server2']['custom_var'] }}"
