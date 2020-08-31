@@ -1,0 +1,24 @@
+---
+- hosts: localdb
+  become: yes
+  become_user: root
+- name: Apply MySQL Playbook (Install and configure MySQL using role).
+  include: MySQL/playbook.yml
+
+- hosts: localftp
+  become: yes
+  become_user: root
+- name: Apply ProFTPd Playbook (Install and configure ProFTPd).
+  include: ProFTPd/playbook.yml
+
+- hosts: localweb
+  become: yes
+  become_user: root
+- name: Apply Apache Playbook (Install and configure Apache using role).
+  include: Apache/playbook.yml
+
+- hosts: localweb
+  become: yes
+  become_user: root
+- name: Apply PHP Playbook (PHP Packages and Clone Repo).
+  include: PHP/playbook.yml

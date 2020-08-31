@@ -1,0 +1,10 @@
+mysql_root_password: 123
+mysql_databases:
+  - name: devops
+    encoding: latin1
+    collation: latin1_general_ci
+mysql_users:
+  - name: admin
+    host: "%"
+    password: admin
+    priv: "*.*:ALL"

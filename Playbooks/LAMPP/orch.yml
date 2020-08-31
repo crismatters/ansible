@@ -1,0 +1,5 @@
+- hosts: localweb
+  become: true
+  become_user: root
+- name: Install and configure Apache.
+  include: Apache/playbook.yml

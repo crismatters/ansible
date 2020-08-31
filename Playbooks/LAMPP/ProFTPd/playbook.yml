@@ -1,0 +1,16 @@
+- hosts: localftp
+  become: yes
+  become_user: root
+  tasks:
+    - name: Install ProFTPd.
+      yum: 
+        name: proftpd
+        state: latest
+    - name: Deploy conf template
+      template:
+        src: templates/proftpd.conf.j2
+        dest: /etc/proftpd.conf
+    - name: Restart ProFTPd Daemon.
+      service:
+        name: proftpd
+        state: restarted
