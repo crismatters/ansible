@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Backup MongoDB coedevops database.
+      cron:
+        name: "Backup MongoDB"
+        minute: "19"
+        hour: "12"
+        job: "bash /home/crismatters/backups/backup_script.sh"
